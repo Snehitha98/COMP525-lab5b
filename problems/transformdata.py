@@ -3,7 +3,7 @@ dataset.py
 Mihaela
 March 11, 2020
 """
-import csv
+
 
 class TransformData():
     """
@@ -53,7 +53,6 @@ class TransformData():
             'PG', 'PG', 'SG', 'C', 'SG'
         ]
 
-
     def record_per_row(self):
         """
         Writes a CSV file with as many records as the size of any of the lists
@@ -61,10 +60,24 @@ class TransformData():
         a name, salary, and position.
         """
         with open('nba.txt', 'w') as nba_file:
-            for n, s, p in zip(self.names, self.salaries, self.positions):
-                nsp_row = n + ',' + str(s) +',' + p + '\n'
+            for name, salary, position in zip(
+                    self.names, self.salaries, self.positions
+            ):
+                nsp_row = name + ',' + str(salary) + ',' + position + '\n'
                 nba_file.write(nsp_row)
 
+    def extra_method(self):
+        """
+        extra_method to eliminate pylint error
+        """
+
+
+def main():
+    """
+    main function to execute function calls
+    """
+    TransformData().record_per_row()
+
+
 if __name__ == '__main__':
-    td = TransformData()
-    td.record_per_row()
+    main()
