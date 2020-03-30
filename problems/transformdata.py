@@ -66,10 +66,30 @@ class TransformData():
                 nsp_row = name + ',' + str(salary) + ',' + position + '\n'
                 nba_file.write(nsp_row)
 
-    def extra_method(self):
+
+    def names_by_pos(self):
         """
-        extra_method to eliminate pylint error
+        Create a dictionary keyed by positions and values are lists
+        of the names corresponding to each position.
+        Returns : dictionary
+           keys are positions
+           values are list of names that correspond to that position
         """
+
+
+    def most_played_position(self):
+        """
+        call names_by_pos(self), use the dictionary to create a new dictionary
+        whose keys are the positions and the values are the lengths of the
+        lists of players for each position.
+        input : dictionary
+           keys are positions
+           values are list of names that correspond to that position
+        Returns : dictionary
+           keys are positions
+           values are lengths of the lists of players for each position
+        """
+
 
 
 def main():
