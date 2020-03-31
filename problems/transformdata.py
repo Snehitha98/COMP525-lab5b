@@ -102,6 +102,12 @@ class TransformData():
            keys are positions
            values are lengths of the lists of players for each position
         """
+        names_by_pos = TransformData().names_by_pos()
+        most_played_position = {}
+        for key in names_by_pos:
+            len_of_list = len(names_by_pos[key])
+            most_played_position[key] = len_of_list
+        return most_played_position
 
 
 def main():
@@ -111,6 +117,8 @@ def main():
     TransformData().record_per_row()
     result = TransformData().names_by_pos()
     print(f'names_by_pos returns {result}')
+    result = TransformData().most_played_position()
+    print(f'most_played_position returns {result}')
 
 
 if __name__ == '__main__':
