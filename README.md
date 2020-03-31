@@ -52,3 +52,32 @@ def names_by_pos(self):
        * store the value `a_name` in `names_by_pos` keyed by `a_position`
     * close the opened file `file_ref`
 * Returns `names_by_pos` when iteration is over  
+
+
+### most_played_position()
+```
+def most_played_position(self):
+      """
+      call names_by_pos(self), use the dictionary to create a new dictionary
+      whose keys are the positions and the values are the lengths of the
+      lists of players for each position.
+      input : dictionary
+         keys are positions
+         values are list of names that correspond to that position
+      Returns : dictionary
+         keys are positions
+         values are lengths of the lists of players for each position
+      """
+```
+* Call the function **names_by_pos()**
+* Use the accumulation pattern
+* **accumulator**
+    * of type dictionary
+    * initialized with {}
+    * named `most_played_position`
+    * keys are the positions
+    * values are the length of the lists of players for each position
+*  use a for loop with loop variable named `key` to iterate over `names_by_pos`
+    * define and initialize `len_of_list` of type integer that returns length of list of players `names_by_pos[key]`
+    * assign `len_of_list` to `most_played_position` keyed by `key`
+* Returns `most_played_position` when iteration is over
