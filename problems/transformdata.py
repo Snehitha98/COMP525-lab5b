@@ -75,6 +75,19 @@ class TransformData():
            keys are positions
            values are list of names that correspond to that position
         """
+        file_ref = open("nba.txt", "r")
+        names_by_pos = {}
+        for line in file_ref.readlines():
+            lst = line.split(",")
+            a_name = lst[0]
+            a_position = lst[2]
+            a_position = a_position.replace("\n", "")
+            if a_position in names_by_pos:
+                names_by_pos[a_position] += [a_name]
+            else:
+                names_by_pos[a_position] = [a_name]
+        file_ref.close()
+        return names_by_pos
 
 
     def most_played_position(self):
@@ -91,12 +104,13 @@ class TransformData():
         """
 
 
-
 def main():
     """
     main function to execute function calls
     """
     TransformData().record_per_row()
+    result = TransformData().names_by_pos()
+    print(f'names_by_pos returns {result}')
 
 
 if __name__ == '__main__':
