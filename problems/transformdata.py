@@ -53,6 +53,7 @@ class TransformData():
             'PG', 'PG', 'SG', 'C', 'SG'
         ]
 
+
     def record_per_row(self):
         """
         Writes a CSV file with as many records as the size of any of the lists
@@ -67,7 +68,8 @@ class TransformData():
                 nba_file.write(nsp_row)
 
 
-    def names_by_pos(self):
+    @classmethod
+    def names_by_pos(cls):
         """
         Create a dictionary keyed by positions and values are lists
         of the names corresponding to each position.
@@ -90,7 +92,8 @@ class TransformData():
         return names_by_pos
 
 
-    def most_played_position(self):
+    @classmethod
+    def most_played_position(cls):
         """
         call names_by_pos(self), use the dictionary to create a new dictionary
         whose keys are the positions and the values are the lengths of the
